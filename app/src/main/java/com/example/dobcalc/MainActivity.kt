@@ -11,17 +11,17 @@ import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
-    private var _binding : ActivityMainBinding? = null
+    private lateinit var _binding : ActivityMainBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         _binding= ActivityMainBinding.inflate(layoutInflater)
-        setContentView(_binding!!.root)
-        _binding!!.tvAgeInMinutes
-        _binding!!.tvSelectedDate
-        _binding!!.datePickerButton.setOnClickListener {
+        setContentView(_binding.root)
+        _binding.tvAgeInMinutes
+        _binding.tvSelectedDate
+        _binding.datePickerButton.setOnClickListener {
 
             clickDatePicker()
         }
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                     "Year was $selectedYear Month was ${selectedMonth+1} Day was $selectedDayOfMonth", Toast.LENGTH_LONG).show()
 
                 val selectedDate = "$selectedDayOfMonth/${selectedMonth+1}/$selectedYear"
-                _binding?.tvSelectedDate?.text = selectedDate
+                _binding.tvSelectedDate.text = selectedDate
 
                 val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH)
 
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
 
                         val minutesDifference = currentDateInMinutes-timeInMinutes
 
-                        _binding?.tvAgeInMinutes?.text = minutesDifference.toString()
+                        _binding.tvAgeInMinutes.text = minutesDifference.toString()
                     }
                 }
 
