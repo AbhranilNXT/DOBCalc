@@ -19,8 +19,6 @@ class MainActivity : AppCompatActivity() {
 
         _binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(_binding.root)
-        //_binding.tvAgeInMinutes
-        //_binding.tvSelectedDate
         _binding.datePickerButton.setOnClickListener {
 
             clickDatePicker()
